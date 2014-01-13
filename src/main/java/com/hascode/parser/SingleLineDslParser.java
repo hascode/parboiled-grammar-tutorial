@@ -1,11 +1,13 @@
-package com.hascode;
+package com.hascode.parser;
 
 import org.parboiled.BaseParser;
 import org.parboiled.Rule;
 import org.parboiled.annotations.BuildParseTree;
 
+import com.hascode.Task;
+
 @BuildParseTree
-public class DslParser extends BaseParser<Task> {
+public class SingleLineDslParser extends BaseParser<Task> {
 	Task dto = new Task();
 
 	public Rule Task() {
@@ -67,9 +69,5 @@ public class DslParser extends BaseParser<Task> {
 	public Rule Label() {
 		return Sequence(OptSp(), NoCommaChars(), push(dto.label(match())),
 				Optional(ValSep()), OptSp());
-	}
-
-	public Rule Newline() {
-		return FirstOf('\n', Sequence('\r', Optional('\n')));
 	}
 }

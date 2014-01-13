@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TaskList {
-	List<Task> tasks = new ArrayList<>();
+	private final List<Task> tasks = new ArrayList<>();
 
-	TaskList add(final Task task) {
+	public TaskList add(final Task task) {
 		tasks.add(task);
 		return this;
 	}
 
-	List<Task> tasks() {
+	public List<Task> tasks() {
 		return tasks;
 	}
 

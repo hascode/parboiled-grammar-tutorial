@@ -13,6 +13,8 @@ import org.parboiled.Parboiled;
 import org.parboiled.parserunners.RecoveringParseRunner;
 import org.parboiled.support.ParsingResult;
 
+import com.hascode.parser.CompleteDslParser;
+
 public class CompleteDslParserTest {
 	CompleteDslParser parser = Parboiled.createParser(CompleteDslParser.class);
 

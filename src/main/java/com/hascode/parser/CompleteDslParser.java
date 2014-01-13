@@ -1,9 +1,12 @@
-package com.hascode;
+package com.hascode.parser;
 
 import org.parboiled.BaseParser;
 import org.parboiled.Rule;
 import org.parboiled.annotations.BuildParseTree;
 import org.parboiled.support.Var;
+
+import com.hascode.Task;
+import com.hascode.TaskList;
 
 @BuildParseTree
 public class CompleteDslParser extends BaseParser<Object> {
