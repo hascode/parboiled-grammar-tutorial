@@ -1,4 +1,4 @@
-package com.hascode;
+package it.parser;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
@@ -13,6 +13,8 @@ import org.parboiled.Parboiled;
 import org.parboiled.parserunners.RecoveringParseRunner;
 import org.parboiled.support.ParsingResult;
 
+import com.hascode.Task;
+import com.hascode.TaskList;
 import com.hascode.parser.CompleteDslParser;
 
 public class CompleteDslParserTest {
@@ -21,8 +23,8 @@ public class CompleteDslParserTest {
 	@Test
 	public void shouldParseMultipleLines() throws Exception {
 		String line1 = String
-				.format("- A first task / assignee:\"joe\" labels:\"foo,bar,baz\"");
-		String line2 = "- This is the second entry / assignee:\"fred\" labels:\"beer,wine\"";
+				.format("- A first task | assignee:\"joe\" labels:\"foo,bar,baz\"");
+		String line2 = "- This is the second entry | assignee:\"fred\" labels:\"beer,wine\"";
 		String line3 = "- And a third entry";
 		String dslString = line1 + "\n" + line2 + "\n" + line3;
 		ParsingResult<TaskList> result = new RecoveringParseRunner<TaskList>(

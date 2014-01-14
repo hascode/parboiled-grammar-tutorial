@@ -46,7 +46,7 @@ public class SingleLineDslParser extends BaseParser<Task> {
 	}
 
 	public Rule OptLim() {
-		return Ch('/');
+		return Ch('|');
 	}
 
 	public Rule FieldSep() {

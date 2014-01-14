@@ -57,7 +57,7 @@ public class CompleteDslParser extends BaseParser<Object> {
 	}
 
 	public Rule OptLim() {
-		return Ch('/');
+		return Ch('|');
 	}
 
 	public Rule FieldSep() {
